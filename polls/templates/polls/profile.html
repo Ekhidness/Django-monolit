@@ -1,0 +1,11 @@
+<h2>Профиль: {{ user.username }}</h2>
+<p>Email: {{ user.email }}</p>
+{% if user.profile.avatar %}
+    <img src="{{ user.profile.avatar.url }}" width="100" alt="Аватар">
+{% endif %}
+<p>Био: {{ user.profile.bio|default:"—" }}</p>
+<p>Дата рождения: {{ user.profile.birth_date|date:"d.m.Y"|default:"—" }}</p>
+
+<a href="{% url 'polls:edit_profile' %}">Редактировать</a> |
+<a href="{% url 'polls:delete_profile' %}">Удалить</a> |
+<a href="{% url 'polls:index' %}">На главную</a>

@@ -1,0 +1,9 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+    {% for result in results %}
+        <li>{{ result.choice.choice_text }} — {{ result.percent }}% ({{ result.choice.votes }})</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Выбрать еще раз?</a>

@@ -1,0 +1,7 @@
+<h2>Удалить профиль?</h2>
+<p>Это действие необратимо.</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Да, удалить</button>
+</form>
+<a href="{% url 'polls:profile' %}">Отмена</a>
